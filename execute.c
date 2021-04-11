@@ -1,12 +1,34 @@
 #include "shell.h"
 
 
-int execute(char * command)
+int execute(char **command)
+{
+    pid_t id;
+
+    id = fork();
+
+    if (id == 0)
+    {
+        if(execve(command[0], command, environ) == -1)
+        {
+            perror("/_shell");
+            return (0);
+        }
+    }
+
+    if (id != 0)
+    {
+        while(wait(NULL) != -1);
+    }
+    return (1); 
+}
+
+void token(char *command)
 {
     char **token = NULL;
     char *aux = NULL;
     int i = 0;
-    pid_t id;
+    
 
     token = malloc((cont(command) + 1) * sizeof(char *));
     aux = strtok(command, " ");
@@ -18,32 +40,8 @@ int execute(char * command)
         i++;
     }
     token[i] = aux;
-
-    id = fork();
-   
-
-    if (id == 0)
-    {
-        if(execve(token[0], token, environ) == -1)
-        {
-            perror("/br_shell");
-            return (0);
-        }
-        
-    }
-
-    if (id != 0)
-    {
-        while(wait(NULL) != -1) ;
-    }
-
+    execute(token);
     free(token);
-    return (1); 
-}
-
-char *token(char *command)
-{
-
 }
 
 int cont(char *buff)
