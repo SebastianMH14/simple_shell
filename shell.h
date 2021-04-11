@@ -11,6 +11,7 @@ extern char **environ;
 #include <sys/wait.h>
 
 int cont(char * buff);
-int execute(char * command);
+int execute(char **command);
+void token(char *command);
 
 #endif
