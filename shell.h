@@ -10,9 +10,12 @@ extern char **environ;
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int cont(char * buff);
+int cont(char *buff);
 int execute(char **command);
 void token(char *command);
+void no_interactive(void);
 int _strncmp(char *s1, char *s2, int i);
+int interactive(void);
+
 
 #endif
