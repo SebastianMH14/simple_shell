@@ -13,5 +13,6 @@ extern char **environ;
 int cont(char * buff);
 int execute(char **command);
 void token(char *command);
+int _strncmp(char *s1, char *s2, int i);
 
 #endif
