@@ -1,13 +1,14 @@
 #include "shell.h"
+#include <unistd.h>
 
 /**
- *main - loop infinito
+ *interactive - function for interactive mode
  *
  *
  *Return: 0
  */
 
-int main(void)
+int interactive(void)
 {
 	char *buff = NULL;
 	size_t readed, number = 0, b = EOF;
