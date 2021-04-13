@@ -1,6 +1,12 @@
 #include "shell.h"
+/**
+ *interactive - function for interactive mode
+ *
+ *
+ *Return: 0
+ */
 
-int main(void)
+int interactive(void)
 {
      char *buff = NULL;
      size_t readed, number = 0, b = EOF;
@@ -10,7 +16,7 @@ int main(void)
 
         if (readed != b)
         {
-            write(1, "#cisfun$ ", 2);
+            write(1, "#cisfun$ ", 9);
             readed = getline(&buff, &number, stdin);
             buff[readed -1] = 0;
             token(buff);
