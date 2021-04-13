@@ -1,5 +1,17 @@
 #include "shell.h"
 /**
+ *handle_sigint - function ctrl + c
+ *
+ *
+ */
+
+
+void handle_sigint(int sig __attribute__((unused)))
+{
+    
+}
+
+/**
  *interactive - function for interactive mode
  *
  *
@@ -8,13 +20,14 @@
 
 int interactive(void)
 {
-     char *buff = NULL;
-     size_t readed, number = 0, b = EOF;
-
+    char *buff = NULL;
+    ssize_t readed = 0;
+    size_t number = 0;
+    signal(SIGINT, handle_sigint);
      while (1)
      {
 
-        if (readed != b)
+        if (readed != EOF)
         {
             write(1, "#cisfun$ ", 9);
             readed = getline(&buff, &number, stdin);

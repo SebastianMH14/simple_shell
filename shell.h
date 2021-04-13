@@ -9,6 +9,7 @@ extern char **environ;
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 int cont(char *buff);
 int execute(char **command);
