@@ -7,7 +7,7 @@
 */
 int main(void)
 {
-	if (isatty(STDIN_FILENO))
+	if (!(isatty(STDIN_FILENO)))
 	{
 		no_interactive();
 	}
