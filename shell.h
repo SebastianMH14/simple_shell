@@ -16,7 +16,8 @@ int execute(char **command);
 void token(char *command);
 void no_interactive(void);
 int _strncmp(char *s1, char *s2, int i);
-int interactive(void);
+void interactive(void);
+void handle_sigint(int sig __attribute__((unused)));
 
 
 #endif

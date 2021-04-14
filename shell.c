@@ -1,25 +1,13 @@
 #include "shell.h"
 
 /**
- *handle_sigint - function ctrl + c
- *@sig: void
- *
- *Return: void
- */
-
-void handle_sigint(int sig __attribute__((unused)))
-{
-	write(STDOUT_FILENO, "\n#cisfun$ ", 10);
-}
-
-/**
  *interactive - function for interactive mode
  *
  *
  *Return: 0
  */
 
-int interactive(void)
+void interactive(void)
 {
 	char *buff = NULL;
 	ssize_t readed = 0;
@@ -44,5 +32,4 @@ int interactive(void)
 		}
 	}
 	free(buff);
-	return (0);
 }
