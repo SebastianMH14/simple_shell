@@ -18,7 +18,7 @@ int execute(char **command)
 		if (execve(command[0], command, environ) == -1)
 		{
 			perror("./shell");
-			return (0);
+			exit(0);
 		}
 	}
 	if (id != 0)
