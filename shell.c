@@ -37,7 +37,7 @@ int interactive(void)
 			if (readed == EOF)
 			{
 				free(buff);
-				write(1, "\n", 1);
+				
 				exit(0);
 			}
 			token(buff);
