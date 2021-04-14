@@ -33,13 +33,13 @@ int interactive(void)
 		{
 			write(1, "#cisfun$ ", 9);
 			readed = getline(&buff, &number, stdin);
+			buff[readed - 1] = 0;
 			if (readed == EOF)
 			{
 				free(buff);
 				write(1, "\n", 1);
 				exit(0);
 			}
-			buff[readed - 1] = 0;
 			token(buff);
 		}
 		else

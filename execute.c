@@ -17,7 +17,7 @@ int execute(char **command)
 	{
 		if (execve(command[0], command, environ) == -1)
 		{
-			perror("/_shell");
+			perror("./shell");
 			return (0);
 		}
 	}
