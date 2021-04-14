@@ -12,7 +12,7 @@ int execute(char **command)
 	pid_t id;
 
 	id = fork();
-
+	wait(NULL);
 	if (id == 0)
 	{
 		if (execve(command[0], command, environ) == -1)
@@ -22,11 +22,6 @@ int execute(char **command)
 		}
 	}
 
-	if (id != 0)
-	{
-		while
-			(wait(NULL) != -1);
-	}
 	return (1);
 }
 
