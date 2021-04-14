@@ -42,11 +42,6 @@ int interactive(void)
 			}
 			token(buff);
 		}
-		else
-		{
-			free(buff);
-			exit(127);
-		}
 	}
 	free(buff);
 	return (0);
